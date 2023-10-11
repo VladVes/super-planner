@@ -1,0 +1,30 @@
+{
+  "type": "module",
+  "name": "super-planner",
+  "version": "1.0.0",
+  "description": "planner",
+  "main": "index.js",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "server": "tsc && node ./built/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladVes/super-planner.git"
+  },
+  "keywords": [
+    "planner"
+  ],
+  "author": "Vladimir Veselov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladVes/super-planner/issues"
+  },
+  "homepage": "https://github.com/VladVes/super-planner#readme",
+  "dependencies": {
+    "@types/node": "^20.8.4"
+  }
+}
