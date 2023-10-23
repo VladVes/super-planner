@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/VladVes/super-planner#readme",
   "dependencies": {
-    "@types/node": "^20.8.4"
+    "@types/node": "^20.8.4",
+    "typescript": "^5.2.2"
   }
 }
