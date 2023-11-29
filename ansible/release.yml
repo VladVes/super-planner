@@ -3,13 +3,27 @@
   - community.docker.docker_login:
       username: vladves
       password: 48056197 
+  
+  - community.docker.docker_network:
+      name: plannerx
 
   - community.docker.docker_container:
       name: app
       image: "vladves/planner:{{ version }}"
       restart_policy: always
       state: started
-      ports:
-        - 3000:3000
+      networks:
+      - name: plannerx
       env:
         NODE_ENV: prodaction
+  
+  - community.docker.docker_container:
+      name: caddy
+      image: "vladves/planner-caddy:{{ version }}"
+      restart_policy: always
+      state: started
+      networks: 
+        - name: plannerx
+      ports:
+        - 80:80
+        - 443:443
