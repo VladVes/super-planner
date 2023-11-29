@@ -1,5 +1,4 @@
 localhost, plannerx.tech {
-  tls internal
 
   handle /images/* {
     file_server
