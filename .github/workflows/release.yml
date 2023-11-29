@@ -17,3 +17,6 @@ jobs:
       - run: docker pull ${{ env.APP_IMAGE_NAME }}:latest
       - run: docker tag ${{ env.APP_IMAGE_NAME }}:latest ${{ env.APP_IMAGE_NAME }}:${{ github.ref_name }}
       - run: docker push ${{ env.APP_IMAGE_NAME }}:${{ github.ref_name }}
+      - run: docker pull ${{ env.APP_IMAGE_NAME }}-caddy:latest
+      - run: docker tag ${{ env.APP_IMAGE_NAME }}-caddy:latest ${{ env.APP_IMAGE_NAME }}-caddy:${{ github.ref_name }}
+      - run: docker push ${{ env.APP_IMAGE_NAME }}-caddy:${{ github.ref_name }}

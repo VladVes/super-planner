@@ -7,10 +7,14 @@ services:
     environment:
       PLANNER_DB_PASSWORD: password
       PLANNER_DB_NAME: planner_db 
+    volumes:
+      - .:/app
     ports:
       - "8080:3000"
     depends_on:
       - db
+      - caddy
+
   db:
     image: postgres
     restart: unless-stopped 
@@ -19,5 +23,15 @@ services:
       POSTGRES_USER: planner
       POSTGRES_PASSWORD: password
 
+  caddy:
+    build:
+      context: .
+      dockerfile: services/caddy/Dockerfile
+    volumes:
+      - .:/app
+      - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
+    ports:
+      - 80:80
+      - 443:443
 
 

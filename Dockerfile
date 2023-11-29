@@ -10,4 +10,4 @@ ENV STARTMESSAGE "Are you readey? Let's roll!"
 
 RUN npm install
 
-CMD npm run server
+CMD make server
