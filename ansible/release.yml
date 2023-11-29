@@ -13,7 +13,7 @@
       restart_policy: always
       state: started
       networks:
-      - name: plannerx
+        - name: plannerx
       env:
         NODE_ENV: prodaction
   
