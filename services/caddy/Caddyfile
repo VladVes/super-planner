@@ -6,7 +6,16 @@ localhost, plannerx.tech {
   }
 
   handle {
-    reverse_proxy app:3000
+    reverse_proxy {
+      to app:3000
+
+      @error status 502
+      handle_response @error {
+        root * /app/services/caddy/error_pages
+        rewrite * /502.html
+        file_server
+      }
+    }
   }
 
   log {
