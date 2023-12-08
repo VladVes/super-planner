@@ -1,7 +1,5 @@
-localhost, plannerx.tech {
+localhost, app.plannerx.tech {
 
-  tls internal
-  
   handle /images/* {
     file_server
     root * /app/public

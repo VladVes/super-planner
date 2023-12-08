@@ -3,6 +3,6 @@ all:
     webservers:
       hosts:
         web1:
-          ansible_host: vladves@84.201.154.44
-        web2:
-          ansible_host: vladves@84.201.140.251
+          ansible_host: plannerx-user@51.250.24.181
+        # web2:
+          # ansible_host: vladves@158.160.20.56
